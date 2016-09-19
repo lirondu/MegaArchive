@@ -1,0 +1,52 @@
+.tt-menu {
+	border: 1px solid #999;
+	border-radius: 4px;
+	width: 450px;
+	margin-top: 2px;
+	background-color: #fff;
+	padding: 8px 3px;
+	min-height: 50px;
+	max-height: 500px;
+	overflow-y: auto;
+}
+
+#search_container {
+	position: relative;
+}
+
+#loading_results {
+	display: none;
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	top: calc(50% - 8px);
+	right: 5px;
+	background: url('./images/loading.gif');
+}
+
+.tt-suggestion {
+	padding: 6px 10px;
+}
+
+.tt-suggestion:hover {
+	cursor: pointer;
+	background-color: #0097cf;
+	color: #fff;
+}
+
+.tt-dataset-header {
+	font-weight: bold;
+	font-style: italic;
+	color: #aaa;
+}
+
+
+/* first child is the hidden loading div
+   second child is the first dataset */
+.tt-dataset:not(:nth-child(2)) .tt-dataset-header {
+	margin-top: 10px;
+}
+
+.tt-dataset:not(:last-child) {
+	border-bottom: 1.5px dashed #aaa;
+}
