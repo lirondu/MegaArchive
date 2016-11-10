@@ -1,0 +1,102 @@
+#collections_container,
+#top_bar,
+.title-container {
+	display: none;
+}
+
+.manage-table-title {
+	display: block;
+	/*text-align: center;*/
+	margin-left: 15%;
+	margin-bottom: 10px;
+	font-size: 1.5em;
+	text-transform: capitalize;
+}
+
+.manage-new-container {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 40px;
+	padding-bottom: 40px;
+	border-bottom: 1px dashed #999;
+}
+
+.manage-table-sort {
+	display: inline-block;
+	margin-left: calc(50% - 30px);
+	margin-bottom: 10px;
+}
+
+.manage-table-sort span {
+	margin-right: 15px;
+}
+
+.manage-table-sort a {
+	margin-right: 4px;
+	padding-bottom: 2px;
+}
+
+.manage-table-sort a.active {
+	color: #aaa;
+}
+
+.manage-table-sort a:hover {
+	border-bottom: 1px solid #333;
+}
+
+.manage-table-sort a.active:hover {
+	cursor: default;
+	border-bottom: 0;
+}
+
+.manage-table-counter {
+	display: inline-block;
+	margin-left: calc(50% + 150px);
+}
+
+.manage-table>tbody>tr>td,
+.manage-table>tfoot>tr>td,
+.manage-table>thead>tr>td {
+	padding: 2px 0;
+	vertical-align: middle; 
+}
+
+.manage-table>tbody>tr>th,
+.manage-table>tfoot>tr>th,
+.manage-table>thead>tr>th {
+	padding: 8px 0;
+}
+
+.manage-table {
+	width: auto;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	font-size: 1.1em;
+	border-radius: 4px;
+	box-shadow: 0px 0px 20px #bbb;
+}
+
+.manage-table .content-loader-link {
+	display: inline-block;
+	width: 100%;
+	padding: 7px 0;
+}
+.manage-table .content-loader-link.btn {
+	width: auto;
+	padding: 1px 15px;
+	margin: 3px 0;
+	font-size: 0.75em;
+}
+
+.manage-table .content-loader-link:hover {
+	color: #337ab7;
+	text-shadow: 5px 5px 20px #aaa;
+	/*font-weight: bold;*/
+}
+
+.manage-table .content-loader-link.btn:hover {
+	color: inherit;
+	text-shadow: 0;
+	/*font-weight: bold;*/
+}

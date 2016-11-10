@@ -1,0 +1,115 @@
+body {
+	padding-top: 30px;
+}
+
+.manager-alert {
+	padding: 0;
+	/*padding-left: 20%;*/
+	text-align: center;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1001;
+}
+
+.manager-alert .log-out {
+	position: absolute;
+	right: 20px;
+	top: 3px;
+}
+
+#site_links {
+	display: none;
+}
+
+#search_container {
+	margin-right: 0;
+}
+
+.manage-table-btn {
+	margin: 5px 0 10px 10px;
+}
+
+.single-content-header input {
+	width: 20%;
+}
+
+.single-content-thumb img {
+	min-height: 250px;
+}
+
+.single-content-data {
+	width: calc(100% - 355px);
+}
+
+.single-content-data fieldset {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 1px 0 3px 10px;
+	margin-bottom: 10px;
+	width: 430px;
+}
+
+.single-content-data .fieldset-big {
+	min-width: 430px;
+	width: 75%;
+	/*display: block;*/
+}
+
+.single-content-data fieldset legend {
+	width: initial;
+	padding: 0;
+	margin-bottom: 0;
+	font-size: inherit;
+	border: 0;
+	font-weight: bold;
+}
+
+.single-content-data fieldset label {
+	margin-left: 0;
+}
+
+.single-content-data form div {
+	margin-bottom: 5px;
+}
+
+.single-content-data form .seperator {
+	/*width: 430px;*/
+	/*border-bottom: 1px solid #ccc;*/
+	margin: 40px;
+}
+
+.single-content-data label {
+	width: 150px;
+	margin-left: 10px;
+}
+
+.single-content-data label .label {
+	color: #333;
+}
+
+.single-content-data [cms-inline=list],
+.single-content-data [cms-inline=textarea],
+.single-content-data [cms-inline=text] {
+	width: 250px;
+}
+
+.textarea-label {
+	vertical-align: top;
+	line-height: 6.5em;
+}
+
+.single-content-data [cms-inline=editor] {
+	display: inline-block;
+	width: calc(100% - 170px);
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.textarea-big-label {
+	vertical-align: top;
+	line-height: 25em;
+}

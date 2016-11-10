@@ -3,6 +3,18 @@
 class DbFunctions {
 	private static $dbWorker = null;
 
+
+	public static function Query($queryStr) {
+		$result = self::$dbWorker->query($queryStr);
+		
+		if ($result) {
+			return self::$dbWorker->insert_id;
+		} else {
+			throw new Exception();
+		}
+	}
+
+
 	public static function QueryAssocArray($queryStr) {
 		$result = self::$dbWorker->query($queryStr);
 		
@@ -155,6 +167,51 @@ class DbFunctions {
 		$query = substr($query, 0, strlen($query) - 3);
 
 		return self::QueryAssocArray($query);
+	}
+
+
+
+
+
+	/******** Admin functions ********/
+
+	public static function IsValidLogin($uname, $pwd) {
+		$users = self::GetTableEntries('users');
+
+		foreach ($users as $user) {
+			if ($user['uname'] === $uname) {
+				return ($user['passwd'] === $pwd);
+			}
+		}
+
+		return false;
+	}
+
+
+	public static function CreateEntry($table, $fieldsArray, $valuesArray) {
+		if (count($fieldsArray) !== count($valuesArray)) {
+			die('DbFunctions::CreateEntry Failed!! "$fieldsArray" and "$valuesArray" count don\'t match');
+		}
+
+		$fieldsStr = '(';
+		$valuesStr = '(';
+
+		for ($i = 0; $i < count($fieldsArray); $i++) {
+			$fieldsStr .= "`" . $fieldsArray[$i] . "`" . ',';
+			$valuesStr .= "'" . $valuesArray[$i] . "'" . ',';
+		}
+
+		if (count($fieldsArray) > 0) {
+			$fieldsStr = substr($fieldsStr, 0, -1);
+			$valuesStr = substr($valuesStr, 0, -1);
+		}
+
+		$fieldsStr .= ')';
+		$valuesStr .= ')';
+
+		$query = "INSERT INTO `$table` $fieldsStr VALUES $valuesStr";
+
+		return self::Query($query);
 	}
 
 }

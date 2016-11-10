@@ -1,0 +1,8 @@
+/*
+!.gitignore
+!.eslintrc.json
+!README.md
+!typings/
+!src/
+
+src/images/
