@@ -103,3 +103,9 @@ input:not([type=submit]):focus {
 textarea:focus, input:focus{
 	outline: none;
 }
+
+#back_btn {
+	margin-top: 50px;
+	margin-left: 15px;
+	width: calc(100% - 30px);
+}

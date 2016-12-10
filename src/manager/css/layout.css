@@ -33,12 +33,14 @@ body {
 	margin: 5px 0 10px 10px;
 }
 
-.single-content-header input {
-	width: 20%;
-}
-
 .single-content-thumb img {
 	min-height: 250px;
+}
+
+.entry-buttons-container {
+	margin-bottom: 20px;
+	text-align: right;
+	max-width: 410px;
 }
 
 .single-content-data {

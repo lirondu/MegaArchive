@@ -1,9 +1,15 @@
+#site_container {
+	margin-top: 20px;
+	margin-left: 6%;
+	margin-right: 6%;	
+}
+
 #header_mobile_content {
 	display: none;
 }
 
 #header {
-	margin: 10px 20px 0 10px;
+	/*margin: 10px 20px 0 10px;*/
 }
 
 #top_bar {

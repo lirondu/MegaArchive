@@ -1,11 +1,11 @@
 {
-  "name": "mega-archive",
-  "version": "1.0.0",
-  "description": "",
-  "main": "",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": ""
+	"name": "mega-archive",
+	"version": "0.0.1",
+	"description": "",
+	"main": "",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": ""
 }

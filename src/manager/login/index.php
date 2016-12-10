@@ -7,7 +7,7 @@ if (isset($_SESSION['valid_admin']) && $_SESSION['valid_admin']) {
 	header('Location: /manager/');
 }
 
-require_once './../../db-worker/mysql.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/dbWorker/mysql.php';
 
 $loginError = '';
 
@@ -66,6 +66,8 @@ if (isset($_POST['uname']) && isset($_POST['passwd'])) {
 				</li>
 			</ul>
 		</form>
+
+		<a href="/" id="back_btn" class="btn btn-warning">Back to Site</a>
 	</div>
 
 

@@ -11,18 +11,18 @@ if (!isset($_SESSION['valid_admin']) || !$_SESSION['valid_admin']) {
 require_once $_SERVER['DOCUMENT_ROOT'] . '/manager/login/expire.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/viewer/php/permissions.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/viewer/php/static-maps.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/db-worker/mysql.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/dbWorker/mysql.php';
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-	<? require_once $_SERVER['DOCUMENT_ROOT'] . '/common/html_head.php'; ?>
+	<? require_once $_SERVER['DOCUMENT_ROOT'] . '/common/htmlHead.php'; ?>
 </head>
 
 <body>
-	<? require_once $_SERVER['DOCUMENT_ROOT'] . '/common/html_body.php'; ?>
+	<? require_once $_SERVER['DOCUMENT_ROOT'] . '/common/htmlBody.php'; ?>
 
 	
 	<!-- Admin css -->
@@ -31,11 +31,15 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/db-worker/mysql.php';
 
 	<!-- Admin scripts -->
 	<script src="//cdn.ckeditor.com/4.5.11/full/ckeditor.js"></script>
+	<script src="/params/params.js"></script>
 	<script src="js/layout.js"></script>
 	<script src="js/cms-config.js"></script>
 	<script src="js/cms-common.js"></script>
 	<script src="js/cms-inline-submit.js"></script>
 	<script src="js/cms-inline-init.js"></script>
+	<script src="js/contentDeleter.js"></script>
+
+	<? require_once $_SERVER['DOCUMENT_ROOT'] . '/manager/php/dynamicElements.php' ?>
 </body>
 
 </html>

@@ -27,7 +27,7 @@ var CmsCommon = {
 
 		$.ajax({
 			type: "POST",
-			url: "/admin4all/core/php/ajax/db-modifier.php",
+			url: "/manager/php/contentModifier/modifier.php",
 			data: tmpData,
 			success: function (msg) {
 				if (callback) {
@@ -37,6 +37,9 @@ var CmsCommon = {
 				}
 			},
 			fail: function () {
+				CmsCommon.ShowResponseMessage('0');
+			},
+			error: function () {
 				CmsCommon.ShowResponseMessage('0');
 			}
 		});
@@ -91,11 +94,11 @@ var CmsCommon = {
 		}
 
 		if (retCode === '1') {
-			CmsCommon.globalOkMessageBox.fadeIn('slow', function () {
+			CmsCommon.globalOkMessageBox.stop().fadeIn('slow', function () {
 				$(this).delay(1500).fadeOut('slow');
 			});
 		} else {
-			CmsCommon.globalErrorMessageBox.fadeIn('slow', function () {
+			CmsCommon.globalErrorMessageBox.stop().fadeIn('slow', function () {
 				$(this).delay(4000).fadeOut('slow');
 			});
 		}
@@ -124,6 +127,22 @@ var CmsCommon = {
 		if (replace) {
 			replaceElem.remove();
 		}
+	},
+
+	RegisterExpirationWatcher: function () {
+		setInterval(function () {
+			$.ajax({
+				type: "POST",
+				url: "/manager/login/expire.php",
+				data: 'only-check=1',
+				
+				success: function (msg) {
+					if (msg === 'expired') {
+						location.assign('login');
+					}
+				}
+			});
+		}, 3000);
 	}
 };
 
@@ -132,15 +151,21 @@ $(function () {
 	CmsCommon.globalOkMessageBox = $('div#ok-message-box');
 	CmsCommon.globalErrorMessageBox = $('div#error-message-box');
 
+	CmsCommon.RegisterExpirationWatcher();
+
 	// CmsCommon.InsertLogoutButton();
 	// CmsCommon.insertPreviewButton();
 
 	// Show/Hide sidebar on hover
 	var sbInitLeftPos = $('#admin_sidebar').css('left');
 	$('#admin_sidebar').hover(function () {
-		$(this).stop().animate({ left: 0 }, 200);
+		$(this).stop().animate({
+			left: 0
+		}, 200);
 	}, function () {
-		$(this).stop().animate({ left: sbInitLeftPos }, 200);
+		$(this).stop().animate({
+			left: sbInitLeftPos
+		}, 200);
 	});
 
 });

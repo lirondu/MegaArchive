@@ -4,7 +4,7 @@ if (!isset($_GET['q']) || !isset($_GET['t'])) {
 	die('ERROR!! Don\'t try manual queries!!');
 }
 
-require_once '../../../db-worker/mysql.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/dbWorker/mysql.php';
 require_once './search-artists.php';
 require_once './search-artworks.php';
 

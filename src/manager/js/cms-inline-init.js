@@ -11,6 +11,7 @@
  *			 (if selected value needed) use 'cms-list-selected' attribute
  *		- pic-browse: adds overlay browse button to replace pic
  *			 (if img is not inside a div) pass 'cms-pic-browse-div="true"
+ *		- checkbox: only affecting submit (html element stays the same)
  *
  * All types should have the following attributes:
  *	cms-table
@@ -50,8 +51,9 @@ var CmsInlineInit = {
 			'[cms-inline="editor"],' +
 			'[cms-inline="list"],' +
 			'[cms-inline="pic-browse"],' +
-			'[cms-inline="gallery"]' +
-			'[cms-inline="textarea"]').each(function () {
+			'[cms-inline="gallery"],' +
+			'[cms-inline="textarea"],' +
+			'[cms-inline="checkbox"]').each(function () {
 				var type = $(this).attr('cms-inline');
 				var el = this.parentElement.innerHTML;
 

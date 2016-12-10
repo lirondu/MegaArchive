@@ -3,7 +3,7 @@
 var ContentLoader = {
 	LoadContent: function () {
 		var self = this;
-		var source = '/content-loader/loader.php';
+		var source = '/contentLoader/loader.php';
 		var data = '';
 
 		for (var param in UrlWorker.urlParams) {
@@ -23,11 +23,17 @@ var ContentLoader = {
 				$(this).stop().fadeIn(500);
 				$('#page_footer').show();
 
-				ThumbView.HandleEntryInfoInitialPosition();				
+				ThumbView.HandleEntryInfoInitialPosition();
 				ThumbView.RegisterLinksHoverAction();
 				self.RegisterPageListClick();
 
 				$(window).trigger('contentloaded');
+
+				$.ajax({
+					type: "POST",
+					url: "/manager/login/expire.php",
+					data: ''
+				});
 			});
 		});
 	},

@@ -8,6 +8,8 @@ class StaticMaps
     public static $orderFieldPerPage;
 	public static $artistsInfoPerLang;
 	public static $gender;
+	public static $contentCreatorsMap;
+	public static $contentDeletersMap;
 }
 
 
@@ -16,7 +18,6 @@ StaticMaps::$pages = [
 		'table' => 'artists',
 		'name' => 'Artists',
 		'content_loader' => 'ContentLoaderArtists',
-		'admin_content_loader' => 'ContentLoaderArtists',
 		'show_in_menu' => true,
 		'link_to_page' => 8
 	],
@@ -24,7 +25,6 @@ StaticMaps::$pages = [
 		'table' => "artworks",
 		'name' => 'Artworks',
 		'content_loader' => 'ContentLoaderArtworks',
-		'admin_content_loader' => 'ContentLoaderArtworks',
 		'show_in_menu' => true,
 		'link_to_page' => 9
 	],
@@ -32,7 +32,6 @@ StaticMaps::$pages = [
 		'table' => "galleries",
 		'name' => 'Galleries',
 		'content_loader' => 'ContentLoaderGalleries',
-		'admin_content_loader' => 'ContentLoaderGalleries',
 		'show_in_menu' => true,
 		'link_to_page' => 10
 	],
@@ -40,7 +39,6 @@ StaticMaps::$pages = [
 		'table' => "exhibitions",
 		'name' => 'Exhibitions',
 		'content_loader' => 'ContentLoaderExhibitions',
-		'admin_content_loader' => 'ContentLoaderExhibitions',
 		'show_in_menu' => true,
 		'link_to_page' => 11
 	],
@@ -48,7 +46,6 @@ StaticMaps::$pages = [
 		'table' => "locations",
 		'name' => 'Locations',
 		'content_loader' => 'ContentLoaderLocations',
-		'admin_content_loader' => 'ContentLoaderLocations',
 		'show_in_menu' => true,
 		'link_to_page' => 12
 	],
@@ -56,7 +53,6 @@ StaticMaps::$pages = [
 		'table' => "publications",
 		'name' => 'Publications',
 		'content_loader' => 'ContentLoaderPublications',
-		'admin_content_loader' => 'ContentLoaderPublications',
 		'show_in_menu' => true,
 		'link_to_page' => 13
 	],
@@ -64,29 +60,31 @@ StaticMaps::$pages = [
 		'table' => "contributors",
 		'name' => 'Contributors',
 		'content_loader' => 'ContentLoaderContributers',
-		'admin_content_loader' => 'ContentLoaderContributers',
 		'show_in_menu' => true,
 		'link_to_page' => 14
 	],
+
+	// Single Pages - also have ADMIN version
 	8 => [
 		'table' => 'artists',
 		'name' => 'Artist',
 		'content_loader' => 'ContentLoaderArtist',
-		'admin_content_loader' => 'ContentLoaderArtistAdmin',
+		'content_loader_admin' => 'ContentLoaderArtistAdmin',
 		'show_in_menu' => false
 	],
 	9 => [
 		'table' => 'artworks',
 		'name' => 'Artwork',
 		'content_loader' => 'ContentLoaderArtwork',
-		'admin_content_loader' => 'ContentLoaderArtworkAdmin',
+		'content_loader_admin' => 'ContentLoaderArtworkAdmin',
 		'show_in_menu' => false
 	],
+
+	// Table Pages - ADMIN only
 	15 => [
 		'table' => 'artists',
 		'name' => 'Artist',
-		'content_loader' => 'ContentLoaderArtist',
-		'admin_content_loader' => 'ContentLoaderArtistTable',
+		'content_loader_admin' => 'ContentLoaderArtistsTable',
 		'show_in_menu' => false
 	]
 ];
@@ -182,3 +180,12 @@ StaticMaps::$artistsInfoPerLang = [
 
 
 StaticMaps::$gender = [1 => 'Female', 2 => 'Male'];
+
+
+StaticMaps::$contentCreatorsMap = [
+	'artists' => 'ContentCreatorArtist'
+];
+
+StaticMaps::$contentDeletersMap = [
+	'artists' => 'ContentDeleterArtist'
+];

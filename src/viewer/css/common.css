@@ -13,6 +13,20 @@ body {
 	clear: both;
 }
 
+#burger_menu {
+	width: 50px;
+	height: 25px;
+	background-color: #000032;
+	position: fixed;
+	top: 0;
+	left: 20px;
+	color: #eee;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.5em;
+	line-height: 25px;
+}
+
 #view_links {
 	float: left;
 	margin-top: 3px;
@@ -24,8 +38,10 @@ body {
 }
 
 #site_links {
-	float: right;
-	margin-top: 3px;
+	/*float: right;*/
+	/*margin-top: 3px;*/
+	position: absolute;
+	right: 20px;
 }
 
 #site_links a,
@@ -52,7 +68,7 @@ body {
 
 #page_container {
 	clear: both;
-	margin: 20px;
+	/*margin: 20px;*/
 }
 
 .page-container-list {

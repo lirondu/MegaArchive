@@ -22,6 +22,8 @@ var CmsInlineSubmit = {
 			type = 2;
 		} else if (el.attr('cms-inline') === 'pic-browse') {
 			type = 3;
+		} else if (el.attr('cms-inline') === 'checkbox') {
+			type = 4;
 		}
 
 
@@ -42,6 +44,11 @@ var CmsInlineSubmit = {
 
 			case 3:
 				data += '&value=' + el.attr('src');
+				break;
+
+			case 4:
+				var checkboxState = (el.is(':checked')) ? '1' : '0';
+				data += '&value=' + checkboxState;
 				break;
 
 			default:
@@ -70,7 +77,8 @@ var CmsInlineSubmit = {
 				}
 			});
 
-			$('[cms-inline="list"]').change(function () {
+			$('[cms-inline="list"],' +
+				'[cms-inline="checkbox"]').change(function () {
 				CmsInlineSubmit.SubmitInlineElement(this);
 			});
 		}
