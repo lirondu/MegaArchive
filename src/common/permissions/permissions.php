@@ -21,4 +21,4 @@ class Permissions {
 	}
 }
 
-Permissions::$validCollections = [1, 2, 3];
+Permissions::$validCollections = [0, 1, 2, 3];

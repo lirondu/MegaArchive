@@ -14,9 +14,9 @@ class ContentLoaderFactory {
 			die('<strong>Wrong parameters!! Don\'t modify the URL manually!!</strong>');
 		}
 
-		$isAdminPage = (intval($_GET['page']) > 7);
+		// $isAdminPage = (intval($_GET['page']) > 7);
 
-		if ($isAdmin && $isAdminPage) {
+		if ($isAdmin && !StaticMaps::$pages[$_GET['page']]['show_in_menu']) {
 			return new StaticMaps::$pages[$_GET['page']]['content_loader_admin'];
 		} else {
 			return new StaticMaps::$pages[$_GET['page']]['content_loader'];

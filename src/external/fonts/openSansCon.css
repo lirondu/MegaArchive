@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: url('OpenSans-CondBold.ttf')  format('truetype')
+}
+
+@font-face {
+  font-family: 'Open Sans Condensed Light';
+  src: url('OpenSans-CondLight.ttf')  format('truetype')
+}

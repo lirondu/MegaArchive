@@ -7,7 +7,7 @@ if (isset($_SESSION['valid_admin']) && $_SESSION['valid_admin']) {
 	header('Location: /manager/');
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/dbWorker/mysql.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/common/dbWorker/mysql.php';
 
 $loginError = '';
 

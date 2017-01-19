@@ -8,16 +8,16 @@ if (!isset($_SESSION['valid_admin']) || !$_SESSION['valid_admin']) {
 	$isAdmin = false;
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/viewer/php/permissions.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/dbWorker/mysql.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/viewer/php/static-maps.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/common/permissions/permissions.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/common/dbWorker/mysql.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/common/staticMaps/staticMaps.php';
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/contentLoader/abstract/contentLoader.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/contentLoader/abstract/menu.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/contentLoader/abstract/single.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/contentLoader/abstract/singleAdmin.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/contentLoader/abstract/table.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/contentLoader/factory/factory.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/common/contentLoader/abstract/contentLoader.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/common/contentLoader/abstract/menu.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/common/contentLoader/abstract/single.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/common/contentLoader/abstract/singleAdmin.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/common/contentLoader/abstract/table.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/common/contentLoader/factory/factory.php';
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/viewer/php/contentLoader/impl/menu/artists.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/viewer/php/contentLoader/impl/menu/artworks.php';

@@ -34,9 +34,17 @@ class ContentLoaderArtwork extends ContentLoaderSingle {
 		echo $this->entry['artist_name'] . ', ' . $this->entry['year_start'];
 	}
 
-	protected function PrintThumb() {
+	protected function PrintSlideShow() {
 		echo $this->entry['thumb'];
 	}
+
+	protected function PrintSlideShowCaption() {
+		echo $this->entry['thumb'];
+	}
+
+	protected function PrintArticleHeader() { }
+
+	protected function PrintArticle() {	}
 
 	protected function PrintData() {
 		?> 
@@ -78,7 +86,8 @@ class ContentLoaderArtwork extends ContentLoaderSingle {
 		<?
 	}
 
-	
+	protected function PrintRelatedData() {}
+
 	protected function PrintRelatedTitle() {
 		echo 'Other artworks by ' . $this->entry['artist_name'];
 	}

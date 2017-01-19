@@ -3,7 +3,7 @@
 var ContentLoader = {
 	LoadContent: function () {
 		var self = this;
-		var source = '/contentLoader/loader.php';
+		var source = '/common/contentLoader/loader.php';
 		var data = '';
 
 		for (var param in UrlWorker.urlParams) {
@@ -23,8 +23,8 @@ var ContentLoader = {
 				$(this).stop().fadeIn(500);
 				$('#page_footer').show();
 
-				ThumbView.HandleEntryInfoInitialPosition();
-				ThumbView.RegisterLinksHoverAction();
+				// ThumbView.HandleEntryInfoInitialPosition();
+				// ThumbView.RegisterLinksHoverAction();
 				self.RegisterPageListClick();
 
 				$(window).trigger('contentloaded');
@@ -39,11 +39,11 @@ var ContentLoader = {
 	},
 
 	RegisterPageListClick: function () {
-		$('.text-list-link, .thumb-list-link, .content-loader-link').click(function () {
+		$('.text-list-link, .thumb-list-link').click(function () {
 			var page = $(this).attr('page');
 			var id = $(this).attr('entry-id');
 
-			UrlWorker.AssignNewUrl(['page', 'id'], [page, id]);
+			UrlWorker.AssignNewUrl(['page', 'id', 'order'], [page, id, '1']);
 		});
 	}
 };

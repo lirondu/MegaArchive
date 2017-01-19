@@ -1,4 +1,5 @@
 <?php
+// error_reporting(0);
 
 class DbFunctions {
 	private static $dbWorker = null;
@@ -8,12 +9,12 @@ class DbFunctions {
 		if (self::$dbWorker === null) {
 			self::$dbWorker = new mysqli('127.0.0.1', 'root', '', 'oberrauch_collection');
 
-			if (self::$dbWorker->connect_errno) {
-				die('Database: DB connection failed!!');
+			if (self::$dbWorker->connect_error) {
+				die('<br><br><strong>Database: DB connection failed!!</strong>');
 			}
 
 			if (!self::$dbWorker->set_charset("utf8")) {
-				die("Database: Error loading character set utf8!!");
+				die("<br><br><strong>Database: Error loading character set utf8!!</strong>");
 			}
 		}
 	}

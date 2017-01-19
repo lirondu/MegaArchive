@@ -1,4 +1,4 @@
-/* global Bloodhound, Handlebars, UrlWorker */
+/* global Bloodhound, Handlebars, UrlWorker, SideMenu */
 
 var SearchBox = {
 	CreateBloodhoundSource: function (t) {
@@ -62,6 +62,7 @@ var SearchBox = {
 		// on select change URL
 		$('#site_search').on('typeahead:select', function (ev, obj) {
 			UrlWorker.AssignNewUrl(['page', 'id'], [obj.page, obj.id]);
+			SideMenu.CloseSideMenu();
 		});
 	}
 };

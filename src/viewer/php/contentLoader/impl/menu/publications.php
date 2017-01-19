@@ -11,7 +11,9 @@ class ContentLoaderPublications extends ContentLoaderMenu {
 			FROM publications
 			INNER JOIN `countries` ON `publications`.`country`=`countries`.`id`
 			LEFT JOIN `collections` ON `publications`.`collection`=`collections`.`id`
-			WHERE `publications`.`id` IN ($this->idsToQuery)
+			WHERE 
+				`publications`.`id` IN ($this->idsToQuery)
+				$this->filters
 			GROUP BY `publications`.`id`
 			ORDER BY `$this->orderField`"
 		);
@@ -19,8 +21,8 @@ class ContentLoaderPublications extends ContentLoaderMenu {
 
 
 	protected function PrintEntryContent($entry) {
-		if ($entry['thumb'] !== '') {
-			?> <img src="<?= $entry['thumb'] ?>"> <?
+		if ($entry['picture'] !== '') {
+			?> <img src="<?= $entry['picture'] ?>"> <?
 		} else {
 			?> <p class="thumb-missing">Missing main picture</p> <?
 		}

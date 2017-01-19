@@ -1,6 +1,6 @@
 var UrlWorker = {
 	urlParams: {
-		collection: { name: 'collection', default: '1', current: null },
+		collection: { name: 'collection', default: '0', current: null },
 		page: { name: 'page', default: '1', current: null },
 		order: { name: 'order', default: '1', current: null },
 		lang: { name: 'lang', default: 'en', current: null },
@@ -18,6 +18,16 @@ var UrlWorker = {
 		7: 'contributors'
 	},
 
+	pageIdDefaultOrder: {
+		1: '1',
+		2: '7',
+		3: '1',
+		4: '7',
+		5: '1',
+		6: '1',
+		7: '1'
+	},
+
 	GetParameterByName: function (name, url) {
 		if (!url) {
 			url = location.href;
@@ -30,7 +40,8 @@ var UrlWorker = {
 	},
 
 	ReadParamsFromUrl: function () {
-		var changed = false;
+		var urlChanged = false;
+		var viewChanged = false;
 
 		for (var param in this.urlParams) {
 			var currentValue = this.GetParameterByName(this.urlParams[param]['name']);
@@ -43,12 +54,15 @@ var UrlWorker = {
 				this.urlParams[param]['current'] = currentValue;
 
 				if (this.urlParams[param]['name'] !== 'view') {
-					changed = true;
+					urlChanged = true;
+				} else {
+					viewChanged = true;
 				}
 			}
 		}
 
-		if (changed) { $(window).trigger('loadcontent'); }
+		if (urlChanged) { $(window).trigger('loadcontent'); }
+		if (viewChanged) { $(window).trigger('changeview'); }
 	},
 
 	GetParamValueToUrl: function (name) {

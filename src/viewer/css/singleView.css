@@ -1,0 +1,89 @@
+.single-content-header {
+	text-align: center;
+	font-size: 1.7em;
+	margin-top: 10px;
+}
+
+.single-content-slideshow-container {
+	text-align: center;
+}
+
+.single-content-slideshow {
+	margin-top: 10px;
+	display: inline-block;
+}
+
+.single-content-slideshow img {
+	height: 400px;
+	margin-bottom: 15px;
+}
+
+.single-content-slideshow p {
+	text-align: initial;
+}
+
+.slideshow-caption .line-margin {
+	margin-top: 10px;
+}
+
+.single-content-text {
+	max-width: 80%;
+	margin: 20px auto 0;
+}
+
+.single-content-main-article {
+	margin-top: 10px;
+}
+
+.single-content-data {
+	padding-bottom: 45px;
+	border-bottom: 2px solid #000;
+}
+
+.single-content-readmore {
+	display: none;
+}
+
+.related-data-section {
+	padding: 20px 0;
+	border-bottom: 2px solid #000;
+}
+
+.related-data-header {
+	text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.single-content-related .page-container-list .thumb-entry-container {
+	height: 150px;
+}
+
+.related-data-section .contact-column {
+	display: inline-block;
+	width: 30%;
+	font-size: 1.2em;
+	font-weight: bold;
+	vertical-align: top;
+	margin-top: 10px;
+}
+
+.related-data-section .contact-column h3 {
+	text-transform: uppercase;
+	font-size: inherit;
+	font-weight: bold;
+}
+
+.single-content-readmore-link {
+	display: inline-block;
+	margin-top: 25px;
+	/*font-size: 1.1em;*/
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.single-content-readmore-link:hover {
+	/*text-shadow: 0 0 1px #aaa;*/
+	font-style: italic;
+}

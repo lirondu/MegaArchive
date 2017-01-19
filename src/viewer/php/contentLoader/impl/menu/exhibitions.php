@@ -11,7 +11,9 @@ class ContentLoaderExhibitions extends ContentLoaderMenu {
 			FROM exhibitions
 			INNER JOIN `countries` ON `exhibitions`.`country`=`countries`.`id`
 			INNER JOIN `collections` ON `exhibitions`.`collection`=`collections`.`id`
-			WHERE `exhibitions`.`id` IN ($this->idsToQuery)
+			WHERE 
+				`exhibitions`.`id` IN ($this->idsToQuery)
+				$this->filters
 			GROUP BY `exhibitions`.`id`
 			ORDER BY `$this->orderField`"
 		);

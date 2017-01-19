@@ -16,6 +16,7 @@ abstract class ContentLoaderMenu extends ContentLoader {
 
 	public function __construct() {
 		parent::__construct();
+		global $isAdmin;
 
 		if (!isset($_GET['order']) ||
 			!isset($_GET['view']))
@@ -24,6 +25,9 @@ abstract class ContentLoaderMenu extends ContentLoader {
 		}
 
 		$this->order = $_GET['order'];
+		if (!$isAdmin && !StaticMaps::$orders[$this->order]['is_public']) {
+			 die('<strong>Wrong parameters!! Don\'t modify the URL manually!!</strong>');
+		}
 
 		if (! array_key_exists($this->order, StaticMaps::$orderFieldPerPage[$this->pageName])) {
 			die('<strong>Wrong parameters!! Don\'t modify the URL manually!!</strong>');
@@ -51,7 +55,7 @@ abstract class ContentLoaderMenu extends ContentLoader {
 
 		$this->filters = (isset($_GET['filters'])) ? ' AND ' . $_GET['filters'] : '';
 
-		$this->printGrouping = (!isset($_GET['grouping']));
+		$this->printGrouping = !(isset($_GET['grouping']) && $_GET['grouping'] === 'false');
 
 		$this->Query();
 	}
@@ -63,12 +67,12 @@ abstract class ContentLoaderMenu extends ContentLoader {
 			return;
 		}
 
-		?> <ul class="page-container-list"> <?
+		?> <ul class="page-container-list <?= $this->viewName ?>"> <?
 
 		foreach($this->pageEntries as $entry) {
+			($this->printGrouping) ? $this->PrintGroupingTitle($entry) : null;
 			?>
 			<li class="<?= $this->viewName ?>-entry-container">
-				<? ($this->printGrouping) ? $this->PrintGroupingTitle($entry) : null; ?>
 				<a 	href="javascript:void(0)" 
 					class="<?= $this->viewName ?>-list-link"
 					page="<?= $this->linkToPage ?>"
@@ -106,7 +110,12 @@ abstract class ContentLoaderMenu extends ContentLoader {
 		}
 
 		if ($current !== $last) {
-			echo '<h5 class="list-group-title">' . $current . '</h5>';
+			?>
+			<li class="<?= $this->viewName ?>-entry-container title">
+				<h5 class="list-group-title"><?= $current ?></h5>
+			</li>
+			<?
+			// echo '<h5 class="list-group-title">' . $current . '</h5>';
 			$last = $current;
 		}
 	}

@@ -1,7 +1,27 @@
+#search_container {
+	position: relative;
+}
+
+#site_search {
+	width: 200px;
+	color: #333;
+	border: 1px solid #999;
+}
+
+.twitter-typeahead {
+	color: #999;
+}
+
+.tt-hint {
+	width: 100%;
+	height: 100%;
+}
+
 .tt-menu {
 	border: 1px solid #999;
-	border-radius: 4px;
-	width: 450px;
+	/*border-radius: 4px;*/
+	/*width: 450px;*/
+	width: 100%;
 	margin-top: 2px;
 	background-color: #fff;
 	padding: 8px 3px;
@@ -10,34 +30,32 @@
 	overflow-y: auto;
 }
 
-#search_container {
-	position: relative;
-}
-
 #loading_results {
 	display: none;
 	position: absolute;
 	width: 16px;
 	height: 16px;
 	top: calc(50% - 8px);
-	right: 5px;
+	right: 20px;
 	background: url('./images/loading.gif');
 }
 
 .tt-suggestion {
 	padding: 6px 10px;
+	color: #555;
 }
 
 .tt-suggestion:hover {
 	cursor: pointer;
-	background-color: #0097cf;
-	color: #fff;
+	font-style: italic;
+	/*background-color: #0097cf;*/
+	/*color: #fff;*/
 }
 
 .tt-dataset-header {
 	font-weight: bold;
 	font-style: italic;
-	color: #aaa;
+	/*color: #aaa;*/
 }
 
 

@@ -1,0 +1,118 @@
+body {
+    overflow-x: hidden;
+	min-height: 100%;
+}
+
+#menu_overlay {
+	width: 2000px;
+	height: 2000px;
+	background: #fff;
+	z-index: 10;
+	position: fixed;
+	top: 0;
+    bottom: 100%;
+    left: 0;
+	transition-property: left;
+	transition-duration: .5s;
+}
+
+.navigation {
+	padding-top: 56px;
+	padding-left: 15px;
+    list-style: none;
+    background: #222;
+	color: #eee;
+    width: 230px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+	transition-property: left;
+	transition-duration: .5s;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#site_container {
+	min-width: 100%;
+    min-height: 100%;
+    background: #fff;
+    position: relative;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    z-index: 20;
+	transition-property: left;
+	transition-duration: .5s;
+}
+
+
+
+#burger_btn {
+	position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+label[for="burger_btn"] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+	width: 44px;
+    height: 44px;
+	line-height: 44px;
+	/*font-size: 1.5em;*/
+	font-weight: bold;
+	text-align: center;
+    cursor: pointer;
+	transition-property: left;
+	transition-duration: .5s;
+	background: #222;
+	color: #fff;
+}
+
+label[for="burger_btn"]:after {
+	content: "+";
+}
+
+#burger_btn:checked + label:after {
+	content: "x";
+	position: absolute;
+  	top: 0;
+  	left: 0;
+  	right: 0;
+  	bottom: 0;
+	/*background: #000032;
+	color: #fff;*/
+}
+
+#burger_btn:checked ~ #site_container,
+#burger_btn:checked ~ #menu_overlay {
+    left: 230px;
+	transition-property: left;
+	transition-duration: .5s;
+}
+
+
+.nav-item {
+	font-weight: bold;
+	margin-bottom: 3px;
+	text-transform: uppercase;
+}
+
+.nav-item.seperator {
+	margin-bottom: 30px;
+}
+
+.nav-item a:hover {
+	font-style: italic;
+}
+
+.nav-item .active {
+	border-bottom: 2px solid;
+	color: #aaa;
+	pointer-events: none;
+}
